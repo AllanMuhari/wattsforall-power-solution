@@ -1,25 +1,28 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, Linkedin } from "lucide-react";
+import  Founder from "../../assets/fridah.jpeg";
+import Operations from "../../assets/wangari.jpeg";
+import Technical from "../../assets/keith.jpg";
 
 const team = [
   {
     name: "Fridah Kamau",
     role: "Founder & Project Lead",
     description: "Fridah is a civil and environmental engineering student with a strong passion for sustainable development, clean energy, and circular economy innovation. WattsForAll was born from her desire to tackle two urgent challenges at once: the growing e-waste crisis and the lack of reliable electricity in underserved communities. Her background in environmental engineering drives the project's strong focus on sustainability, climate action, and responsible resource use. Fridah leads the vision, impact strategy, partnerships, and overall direction of WattsForAll.",
-    image: null,
+    image: Founder,
   },
   {
     name: "Wangari Kimani",
     role: "Operations & Strategy Lead",
     description: "Wangari plays a key role in shaping the strategic direction and day-to-day operations of WattsForAll. She supports project planning, coordination, and execution, helping translate ideas into actionable steps on the ground. With a strong interest in sustainability, entrepreneurship, and impact-driven innovation, she contributes to partnership development, operational systems, and growth strategy as the project scales. Her role ensures that WattsForAll remains organized, goal-oriented, and positioned for long-term impact.",
-    image: null,
+    image: Operations,
   },
   {
     name: "Keith Brian",
     role: "Technical Lead",
     description: "Keith Brian is an electrical engineer with hands-on experience in battery systems, power electronics, and energy storage solutions. As the technical lead of WattsForAll, he is responsible for the design, testing, and safety of the second-life battery power packs and the integration of solar charging systems. His expertise ensures that all WattsForAll products are safe, efficient, and reliable for real-world use in off-grid and low-resource environments.",
-    image: null,
+    image: Technical,
   },
 ];
 
