@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Users, Linkedin } from "lucide-react";
 import Founder from "../../assets/fridah.jpeg";
 import Operations from "../../assets/wangari.jpeg";
-import Technical from "../../assets/grace.jpeg"; // Updated to Grace's image
+import Technical from "../../assets/grace.jpeg";
 
 const team = [
   {
@@ -25,7 +25,7 @@ const team = [
     role: "AI & Data Lead",
     description:
       "Grace leads the development of intelligent systems that enhance the performance, safety, and efficiency of WattsForAll's energy solutions. She focuses on integrating predictive analytics and AI-driven insights into battery and energy management systems, enabling features such as battery health prediction, performance optimization, and data-informed decision-making. Her work also extends to the development of smart dashboards and solar energy management tools that help monitor system performance and improve user experience. Through the application of data and artificial intelligence, Grace is helping shape a future where clean energy solutions are not only accessible, but also smarter and more resilient.",
-    image: Technical, // Note: You'll want to update this import to Grace's actual image
+    image: Technical,
   },
 ];
 
