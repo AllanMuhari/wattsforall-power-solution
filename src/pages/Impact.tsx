@@ -1,6 +1,7 @@
 import { ArrowRight, Download, MapPin, Recycle, Sun, UsersRound } from "lucide-react";
 import communityPhoto from "@/assets/fridah.jpeg";
 import workPhoto from "@/assets/keith.jpg";
+import { PublicContext } from "@/components/sections/PublicContext";
 import { ActionLink, Eyebrow, PageIntro, PlaceholderLabel, SectionHeading } from "@/components/SitePrimitives";
 
 const impactMeasures = ["Households reached", "Lithium e-waste diverted", "CO₂ avoided", "Local skills supported"];
@@ -12,6 +13,7 @@ export default function Impact() {
       <section className="section section--paper"><div className="site-width"><SectionHeading eyebrow="A transparent snapshot" title="Real progress, reported honestly.">These measures are ready for verified figures and clear methodology. No estimates presented as fact.</SectionHeading>
         <div className="stat-grid">{impactMeasures.map((label, index) => { const icons = [Sun, Recycle, ArrowRight, UsersRound]; const Icon = icons[index]; return <article className="stat-card" key={label}><div className="card-icon"><Icon size={20} aria-hidden="true" /></div><strong className="stat-card__value">[X]</strong><span className="stat-card__label">{label}</span><PlaceholderLabel>Figure and method to be confirmed</PlaceholderLabel></article>; })}</div>
       </div></section>
+      <PublicContext />
       <section className="section"><div className="site-width split"><div className="split__copy"><Eyebrow>Community reach</Eyebrow><h2>Show where the work happens—with care.</h2><p>Add a map only after communities have approved how their location is shared. The point is to show real reach, not to expose people or overstate coverage.</p><PlaceholderLabel>Map, approved locations and accessible description to come</PlaceholderLabel></div>
         <div className="map-placeholder"><MapPin size={34} aria-hidden="true" /><strong>Community map placeholder</strong><p>[Add confirmed location(s), with permission and a text alternative.]</p></div>
       </div></section>
