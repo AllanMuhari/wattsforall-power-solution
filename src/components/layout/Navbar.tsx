@@ -1,111 +1,42 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import logo from "@/assets/wattsforall-logo.jpeg";
+import { BrandMark } from "@/components/SitePrimitives";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Problem", href: "/problem" },
-  { name: "Solution", href: "/solution" },
+  { name: "Our Story", href: "/about" },
+  { name: "How It Works", href: "/how-it-works" },
+  { name: "Solutions", href: "/solution" },
   { name: "Impact", href: "/impact" },
-  { name: "Team", href: "/team" },
+  { name: "Get Involved", href: "/get-involved" },
   { name: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/80 border-b border-border/50"
-    >
-      <div className="container-custom section-padding py-4">
-        <div className="flex items-center justify-between">
-          <motion.div whileHover={{ scale: 1.02 }}>
-            <Link to="/" className="flex items-center gap-3">
-              <img src={logo} alt="WattsForAll Logo" className="h-12 w-auto rounded-lg" />
-            </Link>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <motion.div key={link.name} whileHover={{ y: -2 }}>
-                <Link
-                  to={link.href}
-                  className={`transition-colors font-medium ${
-                    location.pathname === link.href
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-primary"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
-            <Link to="/contact">
-              <Button variant="hero">Partner With Us</Button>
-            </Link>
+    <header className="site-header">
+      <nav className="site-width nav-shell" aria-label="Main navigation">
+        <Link to="/" className="brand-lockup" onClick={closeMenu} aria-label="WattsForAll home">
+          <BrandMark />
+          <span className="brand-lockup__text"><strong>WattsForAll</strong><small>Power in a second life</small></span>
+        </Link>
+        <button className="mobile-menu-button" type="button" aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={isOpen} aria-controls="primary-navigation" onClick={() => setIsOpen((open) => !open)}>
+          {isOpen ? <X size={23} aria-hidden="true" /> : <Menu size={23} aria-hidden="true" />}
+        </button>
+        <div id="primary-navigation" className={`nav-content${isOpen ? " nav-content--open" : ""}`}>
+          <div className="nav-links">
+            {navLinks.map((link) => {
+              const active = location.pathname === link.href;
+              return <Link key={link.href} to={link.href} onClick={closeMenu} aria-current={active ? "page" : undefined} className={active ? "nav-link nav-link--active" : "nav-link"}>{link.name}</Link>;
+            })}
           </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+          <Link to="/get-involved" className="button button--primary nav-cta" onClick={closeMenu}>Support our mission <ArrowRight size={16} aria-hidden="true" /></Link>
         </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden overflow-hidden"
-            >
-              <div className="flex flex-col gap-4 pt-6 pb-4">
-                {navLinks.map((link, index) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Link
-                      to={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`transition-colors font-medium text-lg ${
-                        location.pathname === link.href
-                          ? "text-primary"
-                          : "text-muted-foreground hover:text-primary"
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  <Button variant="hero" className="mt-4">
-                    Partner With Us
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.nav>
+      </nav>
+    </header>
   );
 };

@@ -1,93 +1,46 @@
-import { motion } from "framer-motion";
-import { Linkedin, Mail, Heart } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/wattsforall-logo.jpeg";
+import { BrandMark } from "@/components/SitePrimitives";
+import { NewsletterForm } from "@/components/SiteForms";
 
-const footerLinks = [
-  {
-    title: "Quick Links",
-    links: [
-      { name: "Home", href: "/" },
-      { name: "About", href: "/about" },
-      { name: "Solution", href: "/solution" },
-      { name: "Impact", href: "/impact" },
-    ],
-  },
-  {
-    title: "Get Involved",
-    links: [
-      { name: "Partner With Us", href: "/contact" },
-      { name: "Invest", href: "/contact" },
-      { name: "Pilot Program", href: "/contact" },
-      { name: "Contact", href: "/contact" },
-    ],
-  },
+const footerGroups = [
+  { title: "Explore", links: [{ label: "Our Story", to: "/about" }, { label: "How It Works", to: "/how-it-works" }, { label: "Solutions", to: "/solution" }, { label: "Impact", to: "/impact" }] },
+  { title: "Take part", links: [{ label: "Donate batteries", to: "/get-involved#recycle" }, { label: "Partner with us", to: "/get-involved#partner" }, { label: "Volunteer", to: "/get-involved#volunteer" }, { label: "Contact", to: "/contact" }] },
 ];
 
-export const Footer = () => {
-  return (
-    <footer className="bg-card/50 border-t border-border">
-      <div className="container-custom section-padding py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <motion.div className="inline-block mb-6" whileHover={{ scale: 1.02 }}>
-              <Link to="/">
-                <img src={logo} alt="WattsForAll Logo" className="h-16 w-auto rounded-lg" />
-              </Link>
-            </motion.div>
-            <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-              Transforming electronic waste into clean, affordable power solutions for 
-              off-grid and underserved communities. Energy. Reimagined.
-            </p>
-            <div className="flex gap-4">
-              <a
-                href="mailto:wattsforall.ke@gmail.com"
-                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
-              >
-                <Mail className="w-5 h-5 text-primary" />
-              </a>
-              <a
-                href="https://linkedin.com/company/wattsforall"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
-              >
-                <Linkedin className="w-5 h-5 text-primary" />
-              </a>
-            </div>
+export const Footer = () => (
+  <footer className="site-footer">
+    <div className="site-width">
+      <div className="footer-main">
+        <div className="footer-brand">
+          <Link to="/" className="brand-lockup brand-lockup--footer">
+            <BrandMark inverse />
+            <span className="brand-lockup__text"><strong>WattsForAll</strong><small>Power in a second life</small></span>
+          </Link>
+          <p>Turning e-waste into clean power for off-grid communities. Clean energy access for everyone, powered by circular innovation.</p>
+          <div className="footer-socials" aria-label="Contact and social profiles">
+            <a className="icon-link" href="mailto:wattsforall.ke@gmail.com" aria-label="Email WattsForAll"><Mail size={19} /></a>
+            <span className="footer-social-note">Official social profiles coming soon</span>
           </div>
-
-          {/* Links */}
-          {footerLinks.map((section) => (
-            <div key={section.title}>
-              <h4 className="font-display font-bold text-lg mb-4">{section.title}</h4>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} WattsForAll. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-2">
-            Made with <Heart className="w-4 h-4 text-destructive fill-destructive" /> for a sustainable future
-          </p>
+        <div className="footer-links-wrap">
+          {footerGroups.map((group) => <div className="footer-link-group" key={group.title}>
+            <h3>{group.title}</h3>
+            <ul>{group.links.map((link) => <li key={link.label}><Link to={link.to}>{link.label}</Link></li>)}</ul>
+          </div>)}
+        </div>
+        <div className="footer-newsletter">
+          <p className="eyebrow">Letters from the field</p>
+          <h3>Good things are growing.</h3>
+          <p>Get an occasional update from WattsForAll.</p>
+          <NewsletterForm />
         </div>
       </div>
-    </footer>
-  );
-};
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} WattsForAll</span>
+        <span>Turning e-waste into clean power for off-grid communities.</span>
+        <Link to="/contact">Say hello <ArrowRight size={14} aria-hidden="true" /></Link>
+      </div>
+    </div>
+  </footer>
+);

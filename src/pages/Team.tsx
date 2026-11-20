@@ -1,17 +1,27 @@
-import { Navbar } from "@/components/layout/Navbar";
-import { Team as TeamSection } from "@/components/sections/Team";
-import { Footer } from "@/components/layout/Footer";
+import { ArrowRight, BatteryCharging, Handshake, Heart, Recycle, UsersRound } from "lucide-react";
+import { SiteForm } from "@/components/SiteForms";
+import { ActionLink, Eyebrow, PageIntro, SectionHeading } from "@/components/SitePrimitives";
 
-const Team = () => {
+const pathways = [
+  { icon: Recycle, title: "Donate or recycle batteries", copy: "Tell us what you have and where it is. We’ll confirm what can be accepted and how to handle it safely.", to: "#recycle", action: "Start a battery enquiry" },
+  { icon: Handshake, title: "Partner with us", copy: "Bring your local knowledge, collection network or community programme to the conversation.", to: "#partner", action: "Explore a partnership" },
+  { icon: Heart, title: "Fund a community", copy: "Help explore a community-led pilot. We’ll agree on needs, costs and measures together.", to: "#fund", action: "Talk about funding" },
+  { icon: UsersRound, title: "Volunteer your time", copy: "Share a skill in repair, operations, storytelling, research or community engagement.", to: "#volunteer", action: "Offer a skill" },
+];
+
+export default function Team() {
   return (
-    <main className="min-h-screen w-full bg-background overflow-x-hidden">
-      <Navbar />
-      <div className="pt-20">
-        <TeamSection />
-      </div>
-      <Footer />
-    </main>
+    <>
+      <PageIntro eyebrow="Get Involved" title="There’s a place for you in this circle." copy="Good energy work takes many hands. Bring a battery, an idea, your experience or your time—and let’s start with a conversation." aside={<p>No checkout or payment on this page. We’ll help you understand the next step and share confirmed details directly.</p>} />
+      <section className="section section--paper"><div className="site-width"><SectionHeading eyebrow="Choose your path" title="One good next step is enough.">Start where it feels natural. We can figure out the rest together.</SectionHeading>
+        <div className="card-grid">{pathways.map(({ icon: Icon, title, copy, to, action }) => <article className="path-card" id={to.slice(1)} key={title}><div className="card-icon"><Icon size={22} aria-hidden="true" /></div><h3>{title}</h3><p>{copy}</p><a className="button button--text" href={to}>{action}<ArrowRight size={16} aria-hidden="true" /></a></article>)}</div>
+      </div></section>
+      <section className="section section--sage" id="recycle"><div className="site-width split"><div className="split__copy"><Eyebrow>Donate or recycle batteries</Eyebrow><h2>Not sure what kind of battery you have? That’s okay.</h2><p>Share what you know. The team can help confirm whether it’s suitable and explain what to do next. Please don’t mail or drop off a battery until the team has confirmed the route.</p><div className="donation-steps"><div><span>01</span><p>Tell us the battery or device type.</p></div><div><span>02</span><p>Share its condition, if you know it.</p></div><div><span>03</span><p>Include your general area for drop-off guidance.</p></div></div><div className="form-aside"><p><strong>Safety first:</strong> Don’t open, puncture or ship a damaged or swollen battery. Ask for handling advice before moving it.</p></div></div>
+        <SiteForm mode="interest" initialType="Battery donation or recycling" /></div></section>
+      <section className="section" id="partner"><div className="site-width split split--reverse"><div className="split__copy"><Eyebrow>Partner with us</Eyebrow><h2>Let’s make the work fit the place.</h2><p>We welcome conversations with community organisations, local government, NGOs, e-waste collectors and energy access partners.</p><ul className="check-list"><li><Handshake size={18} />Bring a community priority or local perspective.</li><li><Recycle size={18} />Explore a responsible collection pathway.</li><li><BatteryCharging size={18} />Discuss a potential pilot and clear measures.</li></ul><ActionLink to="/contact" variant="secondary">Start a partner conversation</ActionLink></div><div className="partner-feature"><span className="tag">For organisations</span><h3>Shared goals. Clear roles.</h3><p>Details such as location, scope, partner names and expected outcomes are agreed together and confirmed before they’re published.</p><span className="placeholder-note">No partner logos or claims until approved.</span></div></div></section>
+      <section className="section section--paper" id="fund"><div className="site-width split"><div className="split__copy"><Eyebrow>Fund a community</Eyebrow><h2>Help a good idea reach its next step.</h2><p>Support a community-led pilot or a specific part of the circular power journey. We’ll work with you to define the budget, timeline and the way progress will be reported.</p><ActionLink to="/contact" variant="outline">Ask about funding</ActionLink></div><div className="funding-note"><p className="funding-note__quote">“[Add a verified funding outcome when one is available.]”</p><span className="tag">Funding story placeholder</span><p className="form-hint">No donation checkout is offered here.</p></div></div></section>
+      <section className="section section--sage" id="volunteer"><div className="site-width split split--reverse"><div className="split__copy"><Eyebrow>Volunteer</Eyebrow><h2>What you know can help.</h2><p>Share a skill, curiosity or bit of time. The right opportunity depends on what the team needs and where you’re based.</p><ActionLink to="/contact" variant="secondary">Offer your time</ActionLink></div><div className="volunteer-tags"><span>Battery expertise</span><span>Community listening</span><span>Repair & testing</span><span>Photography & writing</span><span>Research</span><span>Operations</span></div></div></section>
+      <section className="section section--forest"><div className="site-width"><div className="home-cta"><div><Eyebrow>Start simply</Eyebrow><h2>Tell us what you’re bringing to the table.</h2><p>A short note is enough to begin.</p></div><ActionLink to="/contact" variant="primary">Say hello</ActionLink></div></div></section>
+    </>
   );
-};
-
-export default Team;
+}
