@@ -1,7 +1,7 @@
 import { ArrowRight, HandHeart, Leaf, Lightbulb, UsersRound } from "lucide-react";
-import portraitOne from "@/assets/fridah.jpeg";
-import portraitTwo from "@/assets/grace.jpeg";
-import portraitThree from "@/assets/keith.jpg";
+import portraitFridah from "@/assets/fridah.jpeg";
+import portraitWangari from "@/assets/wangari.jpeg";
+import portraitGrace from "@/assets/grace.jpeg";
 import { ActionLink, Eyebrow, PageIntro, PlaceholderLabel, SectionHeading } from "@/components/SitePrimitives";
 
 const values = [
@@ -11,7 +11,29 @@ const values = [
   { icon: HandHeart, title: "Build alongside communities", copy: "Design with local knowledge, and make space for local skills to grow." },
 ];
 
-const teamPhotos = [portraitOne, portraitTwo, portraitThree];
+const teamMembers = [
+  {
+    name: "Fridah Kamau",
+    role: "Founder & Project Lead",
+    description:
+      "Fridah is a civil and environmental engineering student with a strong passion for sustainable development, clean energy, and circular economy innovation. WattsForAll was born from her desire to tackle two urgent challenges at once: the growing e-waste crisis and the lack of reliable electricity in underserved communities. Her background in environmental engineering drives the project's strong focus on sustainability, climate action, and responsible resource use. Fridah leads the vision, impact strategy, partnerships, and overall direction of WattsForAll.",
+    image: portraitFridah,
+  },
+  {
+    name: "Wangari Kimani",
+    role: "Operations & Strategy Lead",
+    description:
+      "Wangari plays a key role in shaping the strategic direction and day-to-day operations of WattsForAll. She supports project planning, coordination, and execution, helping translate ideas into actionable steps on the ground. With a strong interest in sustainability, entrepreneurship, and impact-driven innovation, she contributes to partnership development, operational systems, and growth strategy as the project scales. Her role ensures that WattsForAll remains organized, goal-oriented, and positioned for long-term impact.",
+    image: portraitWangari,
+  },
+  {
+    name: "Grace Ngari",
+    role: "AI & Data Lead",
+    description:
+      "Grace leads the development of intelligent systems that enhance the performance, safety, and efficiency of WattsForAll's energy solutions. She focuses on integrating predictive analytics and AI-driven insights into battery and energy management systems, enabling features such as battery health prediction, performance optimization, and data-informed decision-making. Her work also extends to the development of smart dashboards and solar energy management tools that help monitor system performance and improve user experience. Through the application of data and artificial intelligence, Grace is helping shape a future where clean energy solutions are not only accessible, but also smarter and more resilient.",
+    image: portraitGrace,
+  },
+];
 
 export default function About() {
   return (
@@ -29,8 +51,21 @@ export default function About() {
         </div>
       </section>
       <section className="section section--sage">
-        <div className="site-width"><SectionHeading eyebrow="The people behind the work" title="Real people. Their words, their way.">Add consent-approved portraits and short bios here. Names and roles are intentionally left open until confirmed.</SectionHeading>
-          <div className="team-grid">{teamPhotos.map((photo, index) => <article className="team-card" key={photo}><div className="team-card__image"><img src={photo} alt={`Portrait placeholder ${index + 1} for the WattsForAll team`} loading="lazy" /></div><div className="team-card__body"><span className="tag">Team portrait placeholder</span><h3>[Name to be confirmed]</h3><p>[Role and a short, approved introduction]</p></div></article>)}</div>
+        <div className="site-width"><SectionHeading eyebrow="Our leadership" title="Meet the women leading WattsForAll.">Three leaders bringing vision, operations, and data-led innovation to the work.</SectionHeading>
+          <div className="team-grid">
+            {teamMembers.map((member) => (
+              <article className="team-card" key={member.name}>
+                <div className="team-card__image">
+                  <img src={member.image} alt={`Portrait of ${member.name}`} loading="lazy" />
+                </div>
+                <div className="team-card__body">
+                  <span className="tag">{member.role}</span>
+                  <h3>{member.name}</h3>
+                  <p>{member.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
       <section className="section section--paper">
