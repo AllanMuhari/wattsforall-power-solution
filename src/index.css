@@ -64,7 +64,7 @@
 }
 
 @layer components {
-  .site-width { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+  .site-width { width: min(1180px, calc(100% - clamp(64px, 13.333vw, 96px))); margin-inline: auto; }
   .section { padding: clamp(4.5rem, 9vw, 8rem) 0; }
   .section--small { padding: clamp(3.5rem, 6vw, 5.5rem) 0; }
   .section--paper { background: var(--paper); }
@@ -347,7 +347,6 @@
 }
 
 @media (max-width: 640px) {
-  .site-width { width: min(100% - 48px, 1180px); }
   .section { padding: 4.25rem 0; }
   .section--small { padding: 3.25rem 0; }
   .page-intro { padding: 2.25rem 0 2.5rem; }
