@@ -260,10 +260,23 @@
   .team-card__body { padding: 1.15rem; }
   .team-card__body h3 { margin: .8rem 0 .35rem; font-size: 1.45rem; }
   .team-card__body p { margin: 0; color: var(--ink-soft); font-size: .88rem; }
-  .press-placeholder { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,253,247,.22); }
-  .press-placeholder h2 { margin-bottom: .8rem; font-size: clamp(2rem, 3.2vw, 3rem); }
-  .press-placeholder p { max-width: 550px; color: rgba(255,253,247,.78); }
-  .press-placeholder .partner-card { min-height: 130px; border-color: rgba(255,253,247,.38); background: rgba(255,253,247,.04); color: rgba(255,253,247,.75); }
+  .recognition-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; gap: clamp(2rem, 5vw, 4rem); padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,253,247,.22); }
+  .recognition-layout .eyebrow { color: #f1c776; }
+  .recognition-layout h2 { margin-bottom: .8rem; font-size: clamp(2rem, 3.2vw, 3rem); }
+  .recognition-layout > div > p { max-width: 550px; color: rgba(255,253,247,.8); }
+  .award-card { padding: clamp(1.5rem, 3vw, 2.25rem); border: 1px solid rgba(255,253,247,.42); border-radius: 1.25rem; background: var(--paper); color: var(--ink); box-shadow: var(--shadow-card); }
+  .award-card__top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.2rem; }
+  .award-card__icon { display: grid; width: 50px; height: 50px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #f2e6cd; color: var(--forest); }
+  .award-card__date { color: var(--ink-soft); font-size: .78rem; font-weight: 600; }
+  .award-card__rank { display: inline-flex; padding: .32rem .65rem; border-radius: 999px; background: var(--forest); color: #fffdf7; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .award-card h3 { margin: .8rem 0 .7rem; color: var(--forest-deep); font-size: clamp(1.4rem, 2.3vw, 1.9rem); }
+  .award-card > p { color: var(--ink-soft); }
+  .award-card__details { padding-top: .9rem; border-top: 1px solid var(--line); }
+  .award-card__details p:last-child { margin-bottom: 0; color: var(--ink-soft); font-size: .87rem; }
+  .award-card__detail-label { margin-bottom: .35rem; color: var(--forest); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .award-card__partner-links { display: flex; flex-wrap: wrap; gap: .7rem 1.2rem; margin-top: 1.2rem; }
+  .award-card__partner-links a { display: inline-flex; align-items: center; gap: .25rem; color: var(--forest); font-size: .78rem; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .award-card__partner-links a:hover { color: var(--clay); }
   .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
   .process-card { padding: 1.35rem; border: 1px solid var(--line); border-radius: 1.15rem; background: var(--cream); }
   .process-card h3 { margin: 0 0 .55rem; font-size: 1.5rem; }
@@ -422,7 +435,7 @@
   .story-pullquote { padding: 2rem; border-bottom-left-radius: 4rem; }
   .team-grid { grid-template-columns: 1fr; }
   .team-card__image { height: 340px; }
-  .press-placeholder { grid-template-columns: 1fr; }
+  .recognition-layout { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .impact-story { grid-template-columns: 1fr; }
   .impact-story--reverse > :first-child { order: initial; }
