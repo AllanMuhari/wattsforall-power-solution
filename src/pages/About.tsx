@@ -2,7 +2,7 @@ import { ArrowRight, ArrowUpRight, HandHeart, Leaf, Lightbulb, Trophy, UsersRoun
 import portraitFridah from "@/assets/fridah.jpeg";
 import portraitWangari from "@/assets/wangari.jpeg";
 import portraitGrace from "@/assets/grace.jpeg";
-import { ActionLink, Eyebrow, PageIntro, PlaceholderLabel, SectionHeading } from "@/components/SitePrimitives";
+import { ActionLink, Eyebrow, PageIntro, SectionHeading } from "@/components/SitePrimitives";
 
 const values = [
   { icon: UsersRound, title: "People before products", copy: "Listen first. Learn what a household or small business actually needs." },
@@ -70,10 +70,8 @@ export default function About() {
       </section>
       <section className="section section--paper">
         <div className="site-width split">
-          <div className="split__copy"><Eyebrow>Where the story began</Eyebrow><h2>A founding story worth telling properly.</h2><p>We’re leaving room for the real details: what sparked the idea, who was there, and what the earliest community conversations taught us. Add a verified founder account here rather than a made-up origin story.</p><PlaceholderLabel>Founding story to be supplied and approved</PlaceholderLabel><div className="button-row"><ActionLink to="/contact" variant="outline">Ask us about our story</ActionLink></div></div>
-          <div className="timeline" aria-label="WattsForAll milestones to be confirmed">
-            {["First idea", "Community listening", "First pilot", "What’s next"].map((item) => <div className="timeline-item" key={item}><span className="timeline-item__year">[Year]</span><div><h3>{item}</h3><p>[Add a verified milestone and a short, specific detail.]</p></div></div>)}
-          </div>
+          <div className="split__copy"><Eyebrow>Where the story began</Eyebrow><h2>A founding story worth telling properly.</h2><p>WattsForAll will share the early story and confirmed milestones when the team is ready to tell them in its own words.</p><ActionLink to="/contact" variant="outline">Ask us about our story</ActionLink></div>
+          <div className="story-pullquote"><span className="story-pullquote__mark">“</span><p>Clean energy access for everyone, powered by circular innovation.</p><span className="story-pullquote__byline">The WattsForAll mission</span></div>
         </div>
       </section>
       <section className="section section--small">

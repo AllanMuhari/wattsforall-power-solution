@@ -9,8 +9,8 @@ const steps = [
 ];
 
 const faqs = [
-  { question: "Are second-life batteries safe?", answer: "A battery’s past use matters. Reuse is only appropriate when each cell meets the relevant documented screening and safety checks. WattsForAll should publish its specific test steps and applicable standards here before launch; a battery that fails must not be reused." },
-  { question: "What happens to batteries that cannot be reused?", answer: "They should be kept out of general waste and sent to an appropriate, approved recovery or recycling route. Add the confirmed local handling and drop-off instructions for each area before publishing." },
+  { question: "Are second-life batteries safe?", answer: "A battery’s past use matters. Reuse is only appropriate when each cell meets the documented screening and safety checks for its intended use. The team will share its specific test steps and applicable standards once confirmed; a battery that fails must not be reused." },
+  { question: "What happens to batteries that cannot be reused?", answer: "They should be kept out of general waste and sent to an appropriate, approved recovery or recycling route. Contact the team for local handling and drop-off guidance before moving or shipping a battery." },
   { question: "How do you decide what a power pack should run?", answer: "Start with the person’s everyday needs—such as light, phone charging or a radio—then match those needs to a pack’s verified capacity and runtime. Publish product-specific figures only after testing." },
   { question: "Can I donate old batteries?", answer: "Yes, get in touch before bringing or shipping anything. Share the battery type, condition if known and your general area so the team can confirm whether it can be accepted and how to handle it." },
 ];
@@ -26,8 +26,8 @@ export default function HowItWorks() {
       </section>
       <section className="section">
         <div className="site-width split">
-          <div className="split__copy"><Eyebrow>Safety is a practice</Eyebrow><h2>Second life only makes sense when it’s a safe one.</h2><p>Battery cells are not interchangeable, and age alone doesn’t tell the whole story. Their condition, handling and intended use all matter.</p><ul className="check-list"><li><ShieldCheck size={18} />Screen each cell against a documented, approved process.</li><li><ShieldCheck size={18} />Keep cells that fail or raise questions out of reuse.</li><li><ShieldCheck size={18} />Use product-specific instructions and clear support guidance.</li></ul><p className="form-hint">Before publishing: add WattsForAll’s confirmed testing steps, standards, handling advice and warranty terms.</p></div>
-          <div className="safety-panel"><div className="safety-panel__icon"><ShieldCheck size={34} aria-hidden="true" /></div><h3>Tested before it’s trusted.</h3><p>Only publish the exact checks the team performs. No technical promise without a verified process behind it.</p><span className="tag">Safety copy placeholder</span></div>
+          <div className="split__copy"><Eyebrow>Safety is a practice</Eyebrow><h2>Second life only makes sense when it’s a safe one.</h2><p>Battery cells are not interchangeable, and age alone doesn’t tell the whole story. Their condition, handling and intended use all matter.</p><ul className="check-list"><li><ShieldCheck size={18} />Screen each cell against a documented, approved process.</li><li><ShieldCheck size={18} />Keep cells that fail or raise questions out of reuse.</li><li><ShieldCheck size={18} />Use product-specific instructions and clear support guidance.</li></ul><p className="form-hint">The team will share its confirmed testing steps, standards and handling guidance directly.</p></div>
+          <div className="safety-panel"><div className="safety-panel__icon"><ShieldCheck size={34} aria-hidden="true" /></div><h3>Tested before it’s trusted.</h3><p>Safety checks come before reuse. Technical details are shared only when the process is confirmed.</p></div>
         </div>
       </section>
       <section className="section section--sage">
