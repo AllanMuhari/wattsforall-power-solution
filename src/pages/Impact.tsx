@@ -1,4 +1,4 @@
-import { ArrowRight, Recycle, Sun, UsersRound, Wind } from "lucide-react";
+import { Recycle, Sun, UsersRound, Wind } from "lucide-react";
 import communityPhoto from "@/assets/fridah.jpeg";
 import workPhoto from "@/assets/wangari.jpeg";
 import { PublicContext } from "@/components/sections/PublicContext";
@@ -19,17 +19,11 @@ export default function Impact() {
         <div className="card-grid">{impactMeasures.map(({ icon: Icon, title, copy }) => <article className="story-card" key={title}><div className="card-icon"><Icon size={22} aria-hidden="true" /></div><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div></section>
       <PublicContext />
-      <section className="section"><div className="site-width split"><div className="split__copy"><Eyebrow>Community reach</Eyebrow><h2>Share places with care.</h2><p>Community-level information will be shared only when it is confirmed and appropriate to publish. Personal details and precise locations deserve protection.</p></div>
-        <div className="solution-note"><span className="tag">Privacy first</span><h3>People before pins on a map.</h3><p>Any future location reporting will respect community consent and avoid exposing sensitive details.</p></div>
-      </div></section>
       <section className="section section--sage"><div className="site-width"><SectionHeading eyebrow="People behind the work" title="The people turning ideas into action.">Our Story highlights the people shaping WattsForAll. Their work brings strategy, clean energy, and circular innovation into focus while community outcomes continue to be verified.</SectionHeading>
         <div className="impact-stories">
           <article className="impact-story"><div className="impact-story__image"><img src={communityPhoto} alt="Portrait of Fridah Kamau, Founder and Project Lead" loading="lazy" /></div><div className="impact-story__copy"><span className="tag">Founder &amp; Project Lead</span><h3>Clean energy and circular innovation.</h3><p>With a background in civil and environmental engineering, Fridah leads WattsForAll’s vision, impact strategy, partnerships, and overall direction.</p></div></article>
           <article className="impact-story impact-story--reverse"><div className="impact-story__image"><img src={workPhoto} alt="Portrait of Wangari Kimani, Operations and Strategy Lead" loading="lazy" /></div><div className="impact-story__copy"><span className="tag">Operations &amp; Strategy Lead</span><h3>Helping ideas become action.</h3><p>Wangari plays a key role in shaping the strategic direction and day-to-day operations of WattsForAll. She supports project planning, coordination, and execution, helping translate ideas into actionable steps on the ground.</p></div></article>
         </div>
-      </div></section>
-      <section className="section section--paper"><div className="site-width split"><div className="split__copy"><Eyebrow>What changes, and how we count it</Eyebrow><h2>A good report says how it knows.</h2><p>Every result will include its reporting period, source, what is counted and what is not. Methods and limitations will be explained in plain language.</p><ul className="check-list"><li><ArrowRight size={18} />The period and scope behind each result.</li><li><ArrowRight size={18} />The method used for any CO₂ estimate.</li><li><ArrowRight size={18} />The limits and assumptions alongside the findings.</li></ul></div>
-        <div className="solution-note"><span className="tag">Reporting commitment</span><h3>Clear evidence, not empty promises.</h3><p>When an impact report is available, it will explain the reporting period, sources, methods and limitations behind its results.</p></div>
       </div></section>
       <section className="section section--forest"><div className="site-width"><div className="home-cta"><div><Eyebrow>Help shape what comes next</Eyebrow><h2>Power a story that can be measured.</h2><p>Partner, volunteer or help fund a community-led pilot.</p></div><ActionLink to="/get-involved" variant="primary">Get involved</ActionLink></div></div></section>
     </>
