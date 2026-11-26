@@ -18,9 +18,8 @@ export const Footer = () => (
             <span className="brand-lockup__text"><strong>WattsForAll</strong><small>Power in a second life</small></span>
           </Link>
           <p>Turning e-waste into clean power for off-grid communities. Clean energy access for everyone, powered by circular innovation.</p>
-          <div className="footer-socials" aria-label="Contact and social profiles">
+          <div className="footer-socials" aria-label="Contact WattsForAll">
             <a className="icon-link" href="mailto:wattsforall.ke@gmail.com" aria-label="Email WattsForAll"><Mail size={19} /></a>
-            <span className="footer-social-note">Official social profiles coming soon</span>
           </div>
         </div>
         <div className="footer-links-wrap">
