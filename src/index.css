@@ -283,11 +283,11 @@
   .process-card { padding: 1.35rem; border: 1px solid var(--line); border-radius: 1.15rem; background: var(--cream); }
   .process-card h3 { margin: 0 0 .55rem; font-size: 1.5rem; }
   .process-card p { color: var(--ink-soft); font-size: .91rem; }
-  .safety-panel, .solution-note, .partner-feature, .funding-note { padding: clamp(1.5rem, 4vw, 3rem); border-radius: 1.4rem; background: var(--paper); box-shadow: var(--shadow-card); }
+  .safety-panel, .solution-note, .funding-note { padding: clamp(1.5rem, 4vw, 3rem); border-radius: 1.4rem; background: var(--paper); box-shadow: var(--shadow-card); }
   .safety-panel { border: 1px dashed var(--line); background: var(--sage); }
   .safety-panel__icon { display: grid; width: 62px; height: 62px; place-items: center; margin-bottom: 1.2rem; border-radius: 50%; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
-  .safety-panel h3, .solution-note h3, .partner-feature h3 { font-size: 1.8rem; }
-  .safety-panel p, .solution-note p, .partner-feature p, .funding-note p { color: var(--ink-soft); }
+  .safety-panel h3, .solution-note h3 { font-size: 1.8rem; }
+  .safety-panel p, .solution-note p, .funding-note p { color: var(--ink-soft); }
   .recovery-loop { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; padding: 2rem; border-radius: 1.4rem; background: var(--sage); color: hsl(var(--primary)); }
   .recovery-loop__node { display: grid; justify-items: center; gap: .55rem; }
   .recovery-loop__node strong { font-size: .82rem; }
@@ -345,8 +345,6 @@
   .donation-steps > div { display: flex; align-items: center; gap: .8rem; }
   .donation-steps span { display: grid; width: 34px; height: 34px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: .75rem; font-weight: 700; }
   .donation-steps p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
-  .partner-feature { min-height: 280px; border: 1px dashed var(--line); background: var(--sage); }
-  .partner-feature h3 { margin-top: 1rem; }
   .funding-note { border-radius: 1.4rem 1.4rem 1.4rem 5rem; background: var(--paper); }
   .funding-note__quote { color: var(--ink) !important; font-family: var(--font-display); font-size: 1.9rem; line-height: 1.25; }
   .volunteer-tags { display: flex; flex-wrap: wrap; align-content: center; gap: .7rem; padding: 2rem; border-radius: 50% 45% 1.2rem 1.2rem; background: var(--paper); }
