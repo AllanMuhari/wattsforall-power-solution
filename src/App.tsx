@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Footer } from "./components/layout/Footer";
 import { Navbar } from "./components/layout/Navbar";
 import Index from "./pages/Index";
@@ -53,6 +53,6 @@ function SiteLayout() {
   </Routes></main><Footer /></>;
 }
 
-const App = () => <QueryClientProvider client={queryClient}><TooltipProvider><Toaster /><Sonner /><HashRouter><ScrollToTop /><SiteLayout /></HashRouter></TooltipProvider></QueryClientProvider>;
+const App = () => <QueryClientProvider client={queryClient}><TooltipProvider><Toaster /><Sonner /><BrowserRouter><ScrollToTop /><SiteLayout /></BrowserRouter></TooltipProvider></QueryClientProvider>;
 
 export default App;

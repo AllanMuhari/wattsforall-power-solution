@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { BrandMark } from "@/components/SitePrimitives";
 
 const navLinks = [
+  { name: "Home", href: "/" },
   { name: "Our Story", href: "/about" },
   { name: "How It Works", href: "/how-it-works" },
   { name: "Solutions", href: "/solution" },
@@ -15,6 +16,7 @@ const navLinks = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const currentPath = location.pathname.replace(/\/+$/, "") || "/";
   const closeMenu = () => setIsOpen(false);
 
   return (
@@ -30,7 +32,7 @@ export const Navbar = () => {
         <div id="primary-navigation" className={`nav-content${isOpen ? " nav-content--open" : ""}`}>
           <div className="nav-links">
             {navLinks.map((link) => {
-              const active = location.pathname === link.href;
+              const active = currentPath === link.href;
               return <Link key={link.href} to={link.href} onClick={closeMenu} aria-current={active ? "page" : undefined} className={active ? "nav-link nav-link--active" : "nav-link"}>{link.name}</Link>;
             })}
           </div>

@@ -226,6 +226,7 @@
   .home-hero__image::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(24,60,52,.15)); content: ''; pointer-events: none; }
   .home-hero__caption { position: absolute; bottom: 0; left: 0; display: flex; max-width: 310px; align-items: center; gap: .8rem; padding: .95rem 1.1rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--paper); box-shadow: var(--shadow-card); color: var(--ink-soft); font-size: .82rem; line-height: 1.5; }
   .home-hero__caption strong { color: var(--ink); }
+  .home-hero__caption a { color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 2px; }
   .home-hero__sun { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: hsl(var(--secondary)); color: var(--clay); }
   .home-hero__orbit { position: absolute; top: 4%; right: -2%; width: 88px; height: 88px; border: 1px solid rgba(185,235,57,.55); border-radius: 50%; }
   .home-steps-link { margin-top: 1.5rem; }
@@ -338,7 +339,7 @@
   .contact-socials { display: flex; flex-wrap: wrap; gap: .6rem; }
   .contact-socials a, .contact-socials span { display: inline-flex; align-items: center; gap: .4rem; padding: .6rem .7rem; border: 1px solid var(--line); border-radius: 999px; color: hsl(var(--primary)); font-size: .82rem; font-weight: 700; text-decoration: none; }
   .footer-social-note { color: rgba(255,255,255,.72); font-size: .78rem; }
-  .home-hero__image .photo-tag { top: 1rem; right: auto; bottom: auto; left: 1rem; }
+  .home-hero__image .photo-tag { top: 1rem; right: auto; bottom: auto; left: 50%; transform: translateX(-50%); }
   .contact-map .map-placeholder { min-height: 200px; padding: 1rem; }
   .donation-steps { display: grid; gap: .5rem; margin: 1.4rem 0; }
   .donation-steps > div { display: flex; align-items: center; gap: .8rem; }
