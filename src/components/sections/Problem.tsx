@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Trash2, Battery, Zap, Home, AlertTriangle } from "lucide-react";
-import problemImage from "@/assets/problem-ewaste.jpg";
+import problemImage from "@/assets/ewaste-recovery.png";
 
 const problems = [
   {
@@ -63,7 +63,7 @@ export const Problem = () => {
             <div className="relative rounded-2xl overflow-hidden">
               <img
                 src={problemImage}
-                alt="E-waste pollution crisis"
+                alt="Illustrative view of discarded electronics being sorted at an e-waste recovery workbench"
                 className="w-full h-[400px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />

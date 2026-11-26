@@ -1,7 +1,6 @@
 import { ArrowDown, ArrowRight, BatteryCharging, CircleHelp, HandHeart, Recycle, Sun, Trophy, Zap } from "lucide-react";
 import fridahPhoto from "@/assets/fridah.jpeg";
-import heroPhoto from "@/assets/plexus-solar-team.jpg";
-import wastePhoto from "@/assets/problem-ewaste.jpg";
+import wastePhoto from "@/assets/ewaste-recovery.png";
 import { ActionLink, CalloutBand, Eyebrow, PhotoFigure, SectionHeading } from "@/components/SitePrimitives";
 
 const steps = [
@@ -26,14 +25,7 @@ export default function Index() {
             </div>
             <span className="home-hero__note"><ArrowDown size={15} aria-hidden="true" /> Turning e-waste into clean power for off-grid communities</span>
           </div>
-          <figure className="home-hero__visual">
-            <div className="home-hero__image photo-frame">
-              <img src={heroPhoto} alt="Solar technician working on a solar power system in Kenya" fetchPriority="high" />
-              <span className="photo-tag">Illustrative image · Kenya</span>
-            </div>
-            <figcaption className="home-hero__caption"><span className="home-hero__sun"><Sun size={20} aria-hidden="true" /></span><span><strong>Local energy, made practical.</strong><br />Photo: <a href="https://commons.wikimedia.org/wiki/File:Plexus_Technical_Team_DSC0775_-_Eng_at_Work.jpg" target="_blank" rel="noreferrer">Plexus Energy Limited</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a></span></figcaption>
-            <span className="home-hero__orbit" aria-hidden="true" />
-          </figure>
+
         </div>
       </section>
 
@@ -45,7 +37,7 @@ export default function Index() {
             <p>Usable lithium batteries are often treated as waste, while households and small businesses can still face gaps in reliable electricity. WattsForAll works at the point where those stories meet: recovering what can be used and turning it into portable power.</p>
             <ActionLink to="/about" variant="text">Meet WattsForAll</ActionLink>
           </div>
-          <PhotoFigure src={wastePhoto} alt="Illustrative view of discarded phones and electronic devices" caption="A difficult material story, told with care." note="Illustrative e-waste image" />
+          <PhotoFigure src={wastePhoto} alt="Illustrative view of a technician sorting discarded phones and electronics at a recovery workbench" caption="A difficult material story, told with care." note="E-waste recovery" />
         </div>
       </section>
 
