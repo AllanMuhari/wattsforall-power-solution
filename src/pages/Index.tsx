@@ -1,7 +1,7 @@
 import { ArrowDown, ArrowRight, BatteryCharging, CircleHelp, HandHeart, Recycle, Sun, Trophy, Zap } from "lucide-react";
 import fridahPhoto from "@/assets/fridah.jpeg";
 import wastePhoto from "@/assets/ewaste-recovery.png";
-import { ActionLink, CalloutBand, Eyebrow, PhotoFigure, SectionHeading } from "@/components/SitePrimitives";
+import { ActionLink, Eyebrow, PhotoFigure, SectionHeading } from "@/components/SitePrimitives";
 
 const steps = [
   { icon: Recycle, title: "Collect", copy: "Give useful battery materials a responsible next step." },
@@ -62,12 +62,6 @@ export default function Index() {
             <ActionLink to="/about" variant="secondary">Meet the team</ActionLink>
           </div>
           <PhotoFigure src={fridahPhoto} alt="Portrait of Fridah Kamau, Founder and Project Lead" caption="Fridah Kamau, Founder and Project Lead." />
-        </div>
-      </section>
-
-      <section className="section section--paper">
-        <div className="site-width">
-          <CalloutBand title="Verified results will have a home here." copy="WattsForAll will share project figures once confirmed, with the reporting period, source and method behind each one." action="Explore impact" to="/impact" />
         </div>
       </section>
 

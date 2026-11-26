@@ -32,7 +32,7 @@ export function PageIntro({ eyebrow, title, copy, aside }: { eyebrow: string; ti
           <Link to="/">Home</Link><span aria-hidden="true">/</span><span aria-current="page">{eyebrow}</span>
         </nav>
       </div>
-      <div className="site-width page-intro__grid">
+      <div className={`site-width page-intro__grid${aside ? "" : " page-intro__grid--single"}`}>
         <div>
           <Eyebrow>{eyebrow}</Eyebrow>
           <h1>{title}</h1>

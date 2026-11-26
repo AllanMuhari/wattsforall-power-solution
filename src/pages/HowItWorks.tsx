@@ -2,17 +2,17 @@ import { ArrowRight, BatteryCharging, ClipboardCheck, Handshake, Recycle, Shield
 import { ActionLink, Eyebrow, PageIntro, SectionHeading } from "@/components/SitePrimitives";
 
 const steps = [
-  { icon: Recycle, title: "Collect with care", copy: "People and organisations can tell us what they have. We’ll confirm what we can accept and where it can go." },
+  { icon: Recycle, title: "Collect with care", copy: "People and organisations can share what they have and get safe-handling guidance for their area." },
   { icon: ClipboardCheck, title: "Check every battery", copy: "A trained person reviews its condition against a documented screening process. If it isn’t suitable, it doesn’t move on to reuse." },
   { icon: BatteryCharging, title: "Build only what’s fit", copy: "Suitable cells can be assembled into portable packs designed around a clear use, with the right checks along the way." },
   { icon: Sun, title: "Deliver with local partners", copy: "Talk with the people who will use the power, then agree on practical support and a route for questions afterward." },
 ];
 
 const faqs = [
-  { question: "Are second-life batteries safe?", answer: "A battery’s past use matters. Reuse is only appropriate when each cell meets the documented screening and safety checks for its intended use. The team will share its specific test steps and applicable standards once confirmed; a battery that fails must not be reused." },
+  { question: "Are second-life batteries safe?", answer: "A battery’s past use matters. Reuse is only appropriate when each cell meets the documented screening and safety checks for its intended use. A battery that fails must not be reused." },
   { question: "What happens to batteries that cannot be reused?", answer: "They should be kept out of general waste and sent to an appropriate, approved recovery or recycling route. Contact the team for local handling and drop-off guidance before moving or shipping a battery." },
-  { question: "How do you decide what a power pack should run?", answer: "Start with the person’s everyday needs—such as light, phone charging or a radio—then match those needs to a pack’s verified capacity and runtime. Publish product-specific figures only after testing." },
-  { question: "Can I donate old batteries?", answer: "Yes, get in touch before bringing or shipping anything. Share the battery type, condition if known and your general area so the team can confirm whether it can be accepted and how to handle it." },
+  { question: "How do you decide what a power pack should run?", answer: "Start with the person’s everyday needs—such as light, phone charging or a radio—and choose a pack designed for those needs." },
+  { question: "Can I donate old batteries?", answer: "Yes, get in touch before bringing or shipping anything. Share the battery type, condition if known and your general area so the team can advise whether it is suitable and how to handle it." },
 ];
 
 export default function HowItWorks() {
@@ -26,8 +26,8 @@ export default function HowItWorks() {
       </section>
       <section className="section">
         <div className="site-width split">
-          <div className="split__copy"><Eyebrow>Safety is a practice</Eyebrow><h2>Second life only makes sense when it’s a safe one.</h2><p>Battery cells are not interchangeable, and age alone doesn’t tell the whole story. Their condition, handling and intended use all matter.</p><ul className="check-list"><li><ShieldCheck size={18} />Screen each cell against a documented, approved process.</li><li><ShieldCheck size={18} />Keep cells that fail or raise questions out of reuse.</li><li><ShieldCheck size={18} />Use product-specific instructions and clear support guidance.</li></ul><p className="form-hint">The team will share its confirmed testing steps, standards and handling guidance directly.</p></div>
-          <div className="safety-panel"><div className="safety-panel__icon"><ShieldCheck size={34} aria-hidden="true" /></div><h3>Tested before it’s trusted.</h3><p>Safety checks come before reuse. Technical details are shared only when the process is confirmed.</p></div>
+          <div className="split__copy"><Eyebrow>Safety is a practice</Eyebrow><h2>Second life only makes sense when it’s a safe one.</h2><p>Battery cells are not interchangeable, and age alone doesn’t tell the whole story. Their condition, handling and intended use all matter.</p><ul className="check-list"><li><ShieldCheck size={18} />Screen each cell against a documented, approved process.</li><li><ShieldCheck size={18} />Keep cells that fail or raise questions out of reuse.</li><li><ShieldCheck size={18} />Use product-specific instructions and clear support guidance.</li></ul></div>
+          <div className="safety-panel"><div className="safety-panel__icon"><ShieldCheck size={34} aria-hidden="true" /></div><h3>Tested before it’s trusted.</h3><p>Only cells that pass the appropriate safety checks can move on to reuse.</p></div>
         </div>
       </section>
       <section className="section section--sage">
@@ -38,7 +38,7 @@ export default function HowItWorks() {
       <section className="section section--paper">
         <div className="site-width split split--reverse">
           <div className="split__copy"><Eyebrow>Keep the loop open</Eyebrow><h2>Reuse what is suitable. Recycle what is not.</h2><p>Making a product is one part of a circular approach. The next part is knowing how to handle it responsibly when its useful life is over.</p><ActionLink to="/get-involved#recycle" variant="secondary">Ask about battery drop-off</ActionLink></div>
-          <div className="recovery-loop"><div className="recovery-loop__node"><Recycle size={27} /><strong>Collected</strong></div><ArrowRight /><div className="recovery-loop__node"><ClipboardCheck size={27} /><strong>Checked</strong></div><ArrowRight /><div className="recovery-loop__node"><BatteryCharging size={27} /><strong>Put to use</strong></div><p>Not suitable for reuse? Follow the confirmed recovery route for your area.</p></div>
+          <div className="recovery-loop"><div className="recovery-loop__node"><Recycle size={27} /><strong>Collected</strong></div><ArrowRight /><div className="recovery-loop__node"><ClipboardCheck size={27} /><strong>Checked</strong></div><ArrowRight /><div className="recovery-loop__node"><BatteryCharging size={27} /><strong>Put to use</strong></div><p>Not suitable for reuse? Ask about a safe recovery route in your area.</p></div>
         </div>
       </section>
       <section className="section"><div className="site-width"><SectionHeading eyebrow="Questions, answered simply" title="Good questions make good energy work." /><div className="faq-list">{faqs.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></section>

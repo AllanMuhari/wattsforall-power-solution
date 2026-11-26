@@ -5,7 +5,7 @@ import { Eyebrow, PageIntro } from "@/components/SitePrimitives";
 export default function Contact() {
   return (
     <>
-      <PageIntro eyebrow="Contact" title="Let’s start with a hello." copy="Have a question, an old battery, a partnership idea or a story to share? Send us a note and we’ll take it from there." aside={<p>Real conversations, clear next steps. No automated sales funnels or payment forms.</p>} />
+      <PageIntro eyebrow="Contact" title="Let’s start with a hello." copy="Have a question, an old battery, a partnership idea or a story to share? Send us a note and we’ll take it from there." />
       <section className="section section--paper"><div className="site-width contact-layout">
         <SiteForm />
         <aside className="contact-sidebar">
