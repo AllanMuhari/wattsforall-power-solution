@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowRight, BatteryCharging, CircleHelp, HandHeart, Recycle, Sun, Trophy, Zap } from "lucide-react";
 import fridahPhoto from "@/assets/fridah.jpeg";
-import heroPhoto from "@/assets/hero-bg.jpg";
+import heroPhoto from "@/assets/plexus-solar-team.jpg";
 import wastePhoto from "@/assets/problem-ewaste.jpg";
 import { ActionLink, CalloutBand, Eyebrow, PhotoFigure, SectionHeading } from "@/components/SitePrimitives";
 
@@ -28,10 +28,10 @@ export default function Index() {
           </div>
           <figure className="home-hero__visual">
             <div className="home-hero__image photo-frame">
-              <img src={heroPhoto} alt="Hands holding a phone beside a solar panel in warm evening light" fetchPriority="high" />
-              <span className="photo-tag">Visual note: everyday energy</span>
+              <img src={heroPhoto} alt="Solar technician working on a solar power system in Kenya" fetchPriority="high" />
+              <span className="photo-tag">Illustrative image · Kenya</span>
             </div>
-            <figcaption className="home-hero__caption"><span className="home-hero__sun"><Sun size={20} aria-hidden="true" /></span><span><strong>Small changes carry far.</strong><br />Power for the moments that make a day.</span></figcaption>
+            <figcaption className="home-hero__caption"><span className="home-hero__sun"><Sun size={20} aria-hidden="true" /></span><span><strong>Local energy, made practical.</strong><br />Photo: <a href="https://commons.wikimedia.org/wiki/File:Plexus_Technical_Team_DSC0775_-_Eng_at_Work.jpg" target="_blank" rel="noreferrer">Plexus Energy Limited</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a></span></figcaption>
             <span className="home-hero__orbit" aria-hidden="true" />
           </figure>
         </div>
