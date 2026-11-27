@@ -1,11 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#09160f" />
     <meta name="description" content="WattsForAll turns discarded lithium batteries into affordable, portable power for underserved, off-grid communities. Clean energy access for everyone, powered by circular innovation." />
     <title>WattsForAll — Power in a second life</title>
+    <script>
+      const savedTheme = document.cookie.match(/(?:^|;\s*)wattsforall-theme=(light|dark)(?:;|$)/)?.[1];
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+        document.querySelector('meta[name="theme-color"]')?.setAttribute("content", savedTheme === "light" ? "#f7f8f3" : "#09160f");
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
